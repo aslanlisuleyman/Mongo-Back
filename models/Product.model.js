@@ -2,9 +2,9 @@ const mongoose =require ("mongoose")
 
 const Product = mongoose.model("Products", new mongoose.Schema({
 
-    title: String,
+    name: String,
     price: Number,
-    image: String
+    images: String
 
 }) )
 

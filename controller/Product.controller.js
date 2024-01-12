@@ -24,8 +24,8 @@ const ProductController={
     },
     add:async(req,res)=>{
         try{
-            const{title,price,image}=req.body
-            const newProduct= new Product({title,price,image})
+            const{name,price,images}=req.body
+            const newProduct= new Product({name,price,images})
            const product =  await newProduct.save();
             res.status(201).send(product)
         }
@@ -36,8 +36,8 @@ const ProductController={
     edit:async(req,res)=>{
         try{
             const {id}=req.params
-        const{title,price,image}=req.body
-        await Product.findByIdAndUpdate(id,{title,price,image})
+        const{name,price,images}=req.body
+        await Product.findByIdAndUpdate(id,{name,price,images})
         res.status(203).send("item updated")
         }
         catch{
